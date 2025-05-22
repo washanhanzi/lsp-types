@@ -2,6 +2,9 @@ use std::{hash::Hash, ops::Deref, str::FromStr};
 
 use serde::{de::Error, Deserialize, Serialize};
 
+mod canonical;
+pub use canonical::*;
+
 /// Newtype struct around `fluent_uri::Uri<String>` with serialization implementations that use `as_str()` and 'from_str()' respectively.
 #[derive(Debug, Clone)]
 pub struct Uri(fluent_uri::Uri<String>);
